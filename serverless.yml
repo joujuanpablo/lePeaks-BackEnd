@@ -47,3 +47,14 @@ functions:
           method: post
           cors: true
           authorizer: aws_iam
+  scan:
+  # Defines an HTTP API endpoint that calls the main function in scan.js
+  # - path: url path is /notes/{id}
+  # - method: GET request
+    handler: scan.main
+    events:
+      - http:
+          path: contacts
+          method: get
+          cors: true
+          authorizer: aws_iam
